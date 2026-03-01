@@ -2,6 +2,7 @@
 
 ### [Unreleased]
 
+- Add `MissingIndexFindByChecker` to detect columns used in `find_by` calls that lack a database index. Uses Ruby's native Prism parser (Ruby 3.3+) to scan project source files. Requires no additional dependencies and silently skips on older Ruby versions.
 - Add `ViewPrimaryKeyChecker` to enforce setting `primary_key` for models pointing to database views.
 - Improve `UniqueIndexChecker` and `MissingUniqueIndexChecker` to support partial indexes and uniqueness validators with `conditions` option.
 - Fix `UniqueIndexChecker` to skip partial indexes (indexes with a `WHERE` clause).
