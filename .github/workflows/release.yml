@@ -42,7 +42,7 @@ jobs:
           VERSION: ${{ github.event.inputs.version }}
         run: |
           DATE=$(date +%Y/%m/%d)
-          sed -i.bak -e "s/^### \[Unreleased\]/### [$VERSION] - $DATE/" CHANGELOG.md
+          sed -i.bak -e "s|^### \[Unreleased\]|### [$VERSION] - $DATE|" CHANGELOG.md
           rm -f CHANGELOG.md.bak
 
       - name: Commit version bump
